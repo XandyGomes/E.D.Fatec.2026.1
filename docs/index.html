@@ -132,6 +132,27 @@
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .header-logo {
+            height: 120px;
+            width: auto;
+            filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+        }
+
+        @media (max-width: 640px) {
+            header h1 {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .header-logo {
+                height: 100px;
+            }
         }
 
         .university-info {
@@ -485,9 +506,14 @@
 
         .footer-logo {
             font-family: 'Outfit', sans-serif;
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: 700;
             margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        .footer-logo span {
+            color: var(--primary-light);
         }
 
         .footer-links {
@@ -562,7 +588,7 @@
             <span class="hero-badge">Ano Letivo 2026</span>
             <div class="university-info">Faculdade de Tecnologia Dr. Thomaz Novelino - Fatec Franca</div>
             <div class="courses-info">Análise e Desenvolvimento de Sistemas</div>
-            <h1>Estrutura de Dados</h1>
+            <h1><img src="img/java.png" alt="Java Logo" class="header-logo">Estrutura de Dados</h1>
             <p class="prof-info">
                 <span class="prof-name">Prof. Me. Alexandre Gomes</span><br>
                 <a href="https://github.com/XandyGomes" target="_blank" class="github-link">
@@ -574,260 +600,210 @@
 
     <nav>
         <div class="nav-container">
-            <a href="#apresentacao"><i data-lucide="home"
-                    style="width:16px; display:inline; vertical-align:middle; margin-right:4px;"></i> Apresentação</a>
+            <a href="#objetivo"><i data-lucide="target"
+                    style="width:16px; display:inline; vertical-align:middle; margin-right:4px;"></i> Objetivo</a>
+            <a href="#conteudo">Conteúdo</a>
+            <a href="#avaliacao">Avaliação</a>
+            <a href="#visualizacao">Visualização</a>
             <a href="#cards">Módulos</a>
-            <a href="#busca-teoria">Busca</a>
-            <a href="#ordenacao-teoria">Ordenação</a>
-            <a href="#estruturas-teoria">Estruturas</a>
+            <a href="#bibliografia">Bibliografia</a>
         </div>
     </nav>
 
     <main class="container">
-        <section id="apresentacao" class="section-title animate-fade-in" style="margin-bottom: 6rem;">
-            <h2>Explore a Disciplina</h2>
-            <p style="max-width: 600px; margin: 0 auto; color: var(--text-muted); font-size: 1.1rem;">
-                A base de todo software eficiente. Nesta jornada, você aprenderá a organizar e manipular informações de
-                forma otimizada.
-            </p>
+        <!-- 1. Objetivo da Disciplina -->
+        <section id="objetivo" class="animate-fade-in" style="margin-bottom: 2rem;">
+            <div class="content-section"
+                style="padding: 3rem; background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);">
+                <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.5rem;">
+                    <div
+                        style="width: 60px; height: 60px; background: var(--primary); color: white; border-radius: 16px; display: flex; align-items: center; justify-content: center;">
+                        <i data-lucide="target" style="width: 32px; height: 32px;"></i>
+                    </div>
+                    <h2 style="font-size: 2rem; margin: 0;">Objetivo da Disciplina</h2>
+                </div>
+                <p
+                    style="font-size: 1.25rem; color: var(--text-main); line-height: 1.8; border-left: 4px solid var(--primary); padding-left: 2rem;">
+                    Criar e manipular tipos abstratos de dados: listas, pilhas, filas e árvores. Discutir os algoritmos
+                    de ordenação e de busca.
+                </p>
+            </div>
         </section>
 
-        <section id="cards" class="animate-fade-in">
-            <div class="cards-grid">
-                <!-- 00 - Apresentação -->
-                <div class="card">
-                    <span class="card-id">#START</span>
-                    <div class="card-icon"><i data-lucide="presentation"></i></div>
-                    <h3>Apresentação</h3>
-                    <p>Visão geral da disciplina, critérios de avaliação e cronograma para o semestre 2026/1.</p>
-                    <div class="card-actions">
-                        <a href="@Apresentação da Disciplina.pdf" target="_blank" class="btn btn-primary"><i
-                                data-lucide="file-text"></i> Abrir PDF</a>
+        <!-- 2. Conteúdo Programático -->
+        <section id="conteudo" class="animate-fade-in">
+            <div class="section-title">
+                <h2>Conteúdo Programático</h2>
+                <p style="color: var(--text-muted); margin-bottom: 2rem;">Roteiro completo de estudos para o semestre.
+                </p>
+            </div>
+            <div class="content-section" style="padding: 3rem;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem;">
+                    <div
+                        style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0;">
+                        <i data-lucide="presentation" style="color: var(--primary); width: 20px;"></i>
+                        <span style="font-weight: 500; font-size: 0.95rem;">@Apresentação da Disciplina</span>
                     </div>
-                </div>
-
-                <!-- 01 - Conceitos -->
-                <div class="card">
-                    <span class="card-id">#00</span>
-                    <div class="card-icon"><i data-lucide="book-open"></i></div>
-                    <h3>Conceitos Iniciais</h3>
-                    <p>Fundamentos de Estrutura de Dados, tipagem estática em Java e introdução à POO.</p>
-                    <div class="card-actions">
-                        <a href="00-Conceitos Estrutura de Dados.pdf" target="_blank" class="btn btn-primary"><i
-                                data-lucide="file-text"></i> Abrir PDF</a>
+                    <div
+                        style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0;">
+                        <i data-lucide="book-open" style="color: var(--primary); width: 20px;"></i>
+                        <span style="font-weight: 500; font-size: 0.95rem;">00-Conceitos Estrutura de Dados</span>
                     </div>
-                </div>
-
-                <!-- 02 - Busca Sequencial -->
-                <div class="card">
-                    <span class="card-id">#01</span>
-                    <div class="card-icon" style="background: linear-gradient(135deg, #f59e0b, #d97706);"><i
-                            data-lucide="search"></i></div>
-                    <h3>Busca Sequencial</h3>
-                    <p>O nível mais básico de busca. Verificação elemento a elemento em conjuntos não ordenados.</p>
-                    <div class="card-actions">
-                        <a href="01-Busca-Sequencial.pdf" target="_blank" class="btn btn-primary"
-                            style="background: #f59e0b;"><i data-lucide="file-text"></i> Abrir PDF</a>
-                        <a href="#busca-teoria" class="btn btn-secondary">Teoria</a>
+                    <div
+                        style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0;">
+                        <i data-lucide="search" style="color: var(--primary); width: 20px;"></i>
+                        <span style="font-weight: 500; font-size: 0.95rem;">01-Busca-Sequencial</span>
                     </div>
-                </div>
-
-                <!-- 03 - Busca Binária -->
-                <div class="card">
-                    <span class="card-id">#02</span>
-                    <div class="card-icon" style="background: linear-gradient(135deg, #f59e0b, #d97706);"><i
-                            data-lucide="scan-line"></i></div>
-                    <h3>Busca Binária</h3>
-                    <p>Eficiência O(log n). Como dividir para conquistar em conjuntos de dados previamente ordenados.
-                    </p>
-                    <div class="card-actions">
-                        <a href="02-Busca-Binaria.pdf" target="_blank" class="btn btn-primary"
-                            style="background: #f59e0b;"><i data-lucide="file-text"></i> Abrir PDF</a>
+                    <div
+                        style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0;">
+                        <i data-lucide="scan-line" style="color: var(--primary); width: 20px;"></i>
+                        <span style="font-weight: 500; font-size: 0.95rem;">02-Busca-Binaria</span>
                     </div>
-                </div>
-
-                <!-- 04 - Bubble Sort -->
-                <div class="card">
-                    <span class="card-id">#03</span>
-                    <div class="card-icon" style="background: linear-gradient(135deg, #3b82f6, #2563eb);"><i
-                            data-lucide="arrow-up-down"></i></div>
-                    <h3>Bubble Sort</h3>
-                    <p>O algoritmo das "bolhas". Entenda como as trocas adjacentes movem os maiores valores ao topo.</p>
-                    <div class="card-actions">
-                        <a href="03-Bubble-Sort.pdf" target="_blank" class="btn btn-primary"
-                            style="background: #3b82f6;"><i data-lucide="file-text"></i> Abrir PDF</a>
-                        <a href="#ordenacao-teoria" class="btn btn-secondary">Teoria</a>
+                    <div
+                        style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0;">
+                        <i data-lucide="arrow-up-down" style="color: var(--primary); width: 20px;"></i>
+                        <span style="font-weight: 500; font-size: 0.95rem;">03-Bubble-Sort</span>
                     </div>
-                </div>
-
-                <!-- 05 - Selection Sort -->
-                <div class="card">
-                    <span class="card-id">#04</span>
-                    <div class="card-icon" style="background: linear-gradient(135deg, #3b82f6, #2563eb);"><i
-                            data-lucide="check-square"></i></div>
-                    <h3>Selection Sort</h3>
-                    <p>Ordenação por seleção: minimizando trocas através da escolha constante do menor elemento.</p>
-                    <div class="card-actions">
-                        <a href="04-Selection-Sort.pdf" target="_blank" class="btn btn-primary"
-                            style="background: #3b82f6;"><i data-lucide="file-text"></i> Abrir PDF</a>
+                    <div
+                        style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0;">
+                        <i data-lucide="check-square" style="color: var(--primary); width: 20px;"></i>
+                        <span style="font-weight: 500; font-size: 0.95rem;">04-Selection-Sort</span>
                     </div>
-                </div>
-
-                <!-- 06 - Recursividade -->
-                <div class="card">
-                    <span class="card-id">#05</span>
-                    <div class="card-icon" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);"><i
-                            data-lucide="layers"></i></div>
-                    <h3>Recursividade</h3>
-                    <p>Poderoso conceito de auto-chamada. Casos base, pilhas de execução e solução de subproblemas.</p>
-                    <div class="card-actions">
-                        <a href="05-Recursividade.pdf" target="_blank" class="btn btn-primary"
-                            style="background: #8b5cf6;"><i data-lucide="file-text"></i> Abrir PDF</a>
+                    <div
+                        style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0;">
+                        <i data-lucide="layers" style="color: var(--primary); width: 20px;"></i>
+                        <span style="font-weight: 500; font-size: 0.95rem;">05-Recursividade</span>
                     </div>
-                </div>
-
-                <!-- 07 - Merge Sort -->
-                <div class="card">
-                    <span class="card-id">#06</span>
-                    <div class="card-icon" style="background: linear-gradient(135deg, #3b82f6, #2563eb);"><i
-                            data-lucide="merge"></i></div>
-                    <h3>Merge Sort</h3>
-                    <p>Divisão recursiva e intercalação ordenada. Estabilidade e alta performance para grandes massas.
-                    </p>
-                    <div class="card-actions">
-                        <a href="06-Merge-Sort.pdf" target="_blank" class="btn btn-primary"
-                            style="background: #3b82f6;"><i data-lucide="file-text"></i> Abrir PDF</a>
+                    <div
+                        style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0;">
+                        <i data-lucide="merge" style="color: var(--primary); width: 20px;"></i>
+                        <span style="font-weight: 500; font-size: 0.95rem;">06-Merge-Sort</span>
                     </div>
-                </div>
-
-                <!-- 08 - Quick Sort -->
-                <div class="card">
-                    <span class="card-id">#07</span>
-                    <div class="card-icon" style="background: linear-gradient(135deg, #3b82f6, #2563eb);"><i
-                            data-lucide="zap"></i></div>
-                    <h3>Quick Sort</h3>
-                    <p>O pivô da ordenação. Como a partição rápida domina a maioria dos cenários reais de programação.
-                    </p>
-                    <div class="card-actions">
-                        <a href="07-Quick-Sort.pdf" target="_blank" class="btn btn-primary"
-                            style="background: #3b82f6;"><i data-lucide="file-text"></i> Abrir PDF</a>
+                    <div
+                        style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0;">
+                        <i data-lucide="zap" style="color: var(--primary); width: 20px;"></i>
+                        <span style="font-weight: 500; font-size: 0.95rem;">07-Quick-Sort</span>
                     </div>
-                </div>
-
-                <!-- 09 - Pilha -->
-                <div class="card">
-                    <span class="card-id">#08</span>
-                    <div class="card-icon" style="background: linear-gradient(135deg, #10b981, #059669);"><i
-                            data-lucide="database"></i></div>
-                    <h3>Pilha (Stack)</h3>
-                    <p>LIFO: Last-In, First-Out. Essencial para históricos, editores de texto e gestão de chamadas.</p>
-                    <div class="card-actions">
-                        <a href="08-Pilha.pdf" target="_blank" class="btn btn-primary" style="background: #10b981;"><i
-                                data-lucide="file-text"></i> Abrir PDF</a>
-                        <a href="#estruturas-teoria" class="btn btn-secondary">Teoria</a>
+                    <div
+                        style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0;">
+                        <i data-lucide="database" style="color: var(--primary); width: 20px;"></i>
+                        <span style="font-weight: 500; font-size: 0.95rem;">08-Pilha</span>
                     </div>
-                </div>
-
-                <!-- 10 - Fila -->
-                <div class="card">
-                    <span class="card-id">#09</span>
-                    <div class="card-icon" style="background: linear-gradient(135deg, #10b981, #059669);"><i
-                            data-lucide="align-justify"></i></div>
-                    <h3>Fila (Queue)</h3>
-                    <p>FIFO: First-In, First-Out. Gestão de processos, pacotes de rede e sistemas de atendimento.</p>
-                    <div class="card-actions">
-                        <a href="09-Fila.pdf" target="_blank" class="btn btn-primary" style="background: #10b981;"><i
-                                data-lucide="file-text"></i> Abrir PDF</a>
+                    <div
+                        style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0;">
+                        <i data-lucide="align-justify" style="color: var(--primary); width: 20px;"></i>
+                        <span style="font-weight: 500; font-size: 0.95rem;">09-Fila</span>
                     </div>
-                </div>
-
-                <!-- 11 - Deque -->
-                <div class="card">
-                    <span class="card-id">#10</span>
-                    <div class="card-icon" style="background: linear-gradient(135deg, #10b981, #059669);"><i
-                            data-lucide="move-horizontal"></i></div>
-                    <h3>Deque</h3>
-                    <p>Fila de duas pontas. Flexibilidade total para inserção e remoção em qualquer extremidade.</p>
-                    <div class="card-actions">
-                        <a href="10-Deque.pdf" target="_blank" class="btn btn-primary" style="background: #10b981;"><i
-                                data-lucide="file-text"></i> Abrir PDF</a>
+                    <div
+                        style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0;">
+                        <i data-lucide="move-horizontal" style="color: var(--primary); width: 20px;"></i>
+                        <span style="font-weight: 500; font-size: 0.95rem;">10-Deque</span>
                     </div>
-                </div>
-
-                <!-- 12 - Lista Encadeada -->
-                <div class="card">
-                    <span class="card-id">#11</span>
-                    <div class="card-icon" style="background: linear-gradient(135deg, #10b981, #059669);"><i
-                            data-lucide="link"></i></div>
-                    <h3>Lista Encadeada</h3>
-                    <p>Dinamicidade na memória. Como os nodos se conectam através de referências e ponteiros.</p>
-                    <div class="card-actions">
-                        <a href="11-Lista-Encadeada.pdf" target="_blank" class="btn btn-primary"
-                            style="background: #10b981;"><i data-lucide="file-text"></i> Abrir PDF</a>
+                    <div
+                        style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0;">
+                        <i data-lucide="link" style="color: var(--primary); width: 20px;"></i>
+                        <span style="font-weight: 500; font-size: 0.95rem;">11-Lista-Encadeada</span>
                     </div>
-                </div>
-
-                <!-- 12.1 - Lista Duplamente Encadeada -->
-                <div class="card">
-                    <span class="card-id">#12</span>
-                    <div class="card-icon" style="background: linear-gradient(135deg, #10b981, #059669);"><i
-                            data-lucide="split"></i></div>
-                    <h3>Lista Dupla</h3>
-                    <p>Navegação bidirecional. Cada nodo conhece o seu sucessor e o seu antecessor.</p>
-                    <div class="card-actions">
-                        <a href="12-Lista-Duplamente-Encadeada.pdf" target="_blank" class="btn btn-primary"
-                            style="background: #10b981;"><i data-lucide="file-text"></i> Abrir PDF</a>
+                    <div
+                        style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0;">
+                        <i data-lucide="split" style="color: var(--primary); width: 20px;"></i>
+                        <span style="font-weight: 500; font-size: 0.95rem;">12-Lista-Duplamente-Encadeada</span>
                     </div>
-                </div>
-
-                <!-- 13 - Árvore Binária -->
-                <div class="card">
-                    <span class="card-id">#13</span>
-                    <div class="card-icon" style="background: linear-gradient(135deg, #ef4444, #dc2626);"><i
-                            data-lucide="git-branch"></i></div>
-                    <h3>Árvore Binária</h3>
-                    <p>Hierarquia e buscas relâmpago. Como organizar dados de forma que a busca seja sempre otimizada.
-                    </p>
-                    <div class="card-actions">
-                        <a href="13-Árvore-Binária-de-Busca.pdf" target="_blank" class="btn btn-primary"
-                            style="background: #ef4444;"><i data-lucide="file-text"></i> Abrir PDF</a>
+                    <div
+                        style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0;">
+                        <i data-lucide="git-branch" style="color: var(--primary); width: 20px;"></i>
+                        <span style="font-weight: 500; font-size: 0.95rem;">13-Árvore-Binária-de-Busca</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Bibliography Section -->
-        <section class="bib-section animate-fade-in">
-            <h3 style="margin-bottom: 2rem; color: var(--primary-dark); font-size: 1.8rem;">Referências Bibliográficas
-            </h3>
-            <ul class="bib-list">
-                <li class="bib-item">
-                    <i data-lucide="book" style="width:20px;"></i>
-                    <span><strong>ASCENCIO, Ana Fernanda Gomes</strong>; ARAÚJO, Graziela Santos de. <em>Estruturas de
-                            dados: algoritmos, análise da complexidade e implementações em Java e C/C++</em>. São Paulo:
-                        Pearson Prentice Hall.</span>
-                </li>
-                <li class="bib-item">
-                    <i data-lucide="book" style="width:20px;"></i>
-                    <span><strong>GOODRICH, Michael T.</strong>; TAMASSIA, Roberto. <em>Estruturas de Dados e Algoritmos
-                            em Java</em>. Porto Alegre: Bookman.</span>
-                </li>
-                <li class="bib-item">
-                    <i data-lucide="book" style="width:20px;"></i>
-                    <span><strong>DEITEL, Harvey M.</strong>; DEITEL, Paul J. <em>Java: como programar</em>. São Paulo:
-                        Pearson.</span>
-                </li>
-                <li class="bib-item">
-                    <i data-lucide="book" style="width:20px;"></i>
-                    <span><strong>CORMEN, Thomas H.</strong> et al. <em>Algoritmos: teoria e prática</em>. Rio de
-                        Janeiro: Elsevier.</span>
-                </li>
-                <li class="bib-item">
-                    <i data-lucide="book" style="width:20px;"></i>
-                    <span><strong>TENENBAUM, Aaron M.</strong> et al. <em>Estruturas de dados usando C</em>. São Paulo:
-                        Makron Books.</span>
-                </li>
-            </ul>
+        <!-- 3. Sistema de Avaliação -->
+        <section id="avaliacao" class="animate-fade-in">
+            <div class="section-title">
+                <h2>Sistema de Avaliação</h2>
+                <p style="color: var(--text-muted);">Composição das notas bimestrais.</p>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
+                <!-- 1º Bimestre -->
+                <div class="card" style="border-top: 5px solid var(--primary);">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1.5rem;">
+                        <h3 style="margin: 0;">Nota do 1º Bimestre</h3>
+                        <span
+                            style="background: var(--primary); color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">SOMA:
+                            10,0</span>
+                    </div>
+                    <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1rem;">
+                        <li style="display: flex; align-items: center; gap: 1rem;">
+                            <div
+                                style="width: 32px; height: 32px; border-radius: 8px; background: #e0e7ff; color: var(--primary); display: flex; align-items: center; justify-content: center;">
+                                <i data-lucide="clipboard-list" style="width: 18px;"></i>
+                            </div>
+                            <div>
+                                <strong style="display: block;">Trabalho (T1)</strong>
+                                <span style="font-size: 0.9rem; color: var(--text-muted);">Valor 2,0</span>
+                            </div>
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 1rem;">
+                            <div
+                                style="width: 32px; height: 32px; border-radius: 8px; background: #fee2e2; color: #ef4444; display: flex; align-items: center; justify-content: center;">
+                                <i data-lucide="file-check" style="width: 18px;"></i>
+                            </div>
+                            <div>
+                                <strong style="display: block;">Prova (P1)</strong>
+                                <span style="font-size: 0.9rem; color: var(--text-muted);">Recursividade, Ordenação e
+                                    Busca. (Valor 8,0)</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 2º Bimestre -->
+                <div class="card" style="border-top: 5px solid var(--secondary);">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1.5rem;">
+                        <h3 style="margin: 0;">Nota do 2º Bimestre</h3>
+                        <span
+                            style="background: var(--secondary); color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">SOMA:
+                            10,0</span>
+                    </div>
+                    <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1rem;">
+                        <li style="display: flex; align-items: center; gap: 1rem;">
+                            <div
+                                style="width: 32px; height: 32px; border-radius: 8px; background: #fce7f3; color: var(--secondary); display: flex; align-items: center; justify-content: center;">
+                                <i data-lucide="clipboard-list" style="width: 18px;"></i>
+                            </div>
+                            <div>
+                                <strong style="display: block;">Trabalho (T2)</strong>
+                                <span style="font-size: 0.9rem; color: var(--text-muted);">Valor 2,0</span>
+                            </div>
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 1rem;">
+                            <div
+                                style="width: 32px; height: 32px; border-radius: 8px; background: #fee2e2; color: #ef4444; display: flex; align-items: center; justify-content: center;">
+                                <i data-lucide="file-check" style="width: 18px;"></i>
+                            </div>
+                            <div>
+                                <strong style="display: block;">Prova (P2)</strong>
+                                <span style="font-size: 0.9rem; color: var(--text-muted);">Pilha, Fila, Deque, Lista
+                                    Encadeada e Árvore Binária. (Valor 8,0)</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Visualização de Algoritmos -->
+        <section id="visualizacao" class="animate-fade-in">
+            <div class="section-title">
+                <h2>Visualização de Algoritmos</h2>
+                <p style="max-width: 600px; margin: 0 auto; color: var(--text-muted); font-size: 1.1rem;">
+                    A melhor forma de entender uma estrutura de dados é vendo como ela se comporta dinamicamente na
+                    memória.
+                </p>
+            </div>
         </section>
 
         <!-- Deep Dive Sections -->
@@ -994,21 +970,257 @@
             </div>
         </section>
 
+        <!-- 5. Explore a Disciplina (Cards) -->
+        <section id="cards" class="animate-fade-in">
+            <div class="section-title">
+                <h2>Explore a Disciplina</h2>
+                <p style="color: var(--text-muted); margin-bottom: 2rem;">Acesse os materiais detalhados em PDF para
+                    cada tópico.</p>
+            </div>
+            <div class="cards-grid">
+                <!-- 00 - Apresentação -->
+                <div class="card">
+                    <span class="card-id">#START</span>
+                    <div class="card-icon"><i data-lucide="presentation"></i></div>
+                    <h3>Apresentação</h3>
+                    <p>Visão geral da disciplina, critérios de avaliação e cronograma para o semestre 2026/1.</p>
+                    <div class="card-actions">
+                        <a href="@Apresentação da Disciplina.pdf" target="_blank" class="btn btn-primary"><i
+                                data-lucide="file-text"></i> Abrir PDF</a>
+                    </div>
+                </div>
+
+                <!-- 01 - Conceitos -->
+                <div class="card">
+                    <span class="card-id">#00</span>
+                    <div class="card-icon"><i data-lucide="book-open"></i></div>
+                    <h3>Conceitos Iniciais</h3>
+                    <p>Fundamentos de Estrutura de Dados, tipagem estática em Java e introdução à POO.</p>
+                    <div class="card-actions">
+                        <a href="00-Conceitos Estrutura de Dados.pdf" target="_blank" class="btn btn-primary"><i
+                                data-lucide="file-text"></i> Abrir PDF</a>
+                    </div>
+                </div>
+
+                <!-- 02 - Busca Sequencial -->
+                <div class="card">
+                    <span class="card-id">#01</span>
+                    <div class="card-icon" style="background: linear-gradient(135deg, #f59e0b, #d97706);"><i
+                            data-lucide="search"></i></div>
+                    <h3>Busca Sequencial</h3>
+                    <p>O nível mais básico de busca. Verificação elemento a elemento em conjuntos não ordenados.</p>
+                    <div class="card-actions">
+                        <a href="01-Busca-Sequencial.pdf" target="_blank" class="btn btn-primary"
+                            style="background: #f59e0b;"><i data-lucide="file-text"></i> Abrir PDF</a>
+                    </div>
+                </div>
+
+                <!-- 03 - Busca Binária -->
+                <div class="card">
+                    <span class="card-id">#02</span>
+                    <div class="card-icon" style="background: linear-gradient(135deg, #f59e0b, #d97706);"><i
+                            data-lucide="scan-line"></i></div>
+                    <h3>Busca Binária</h3>
+                    <p>Eficiência O(log n). Como dividir para conquistar em conjuntos de dados previamente ordenados.
+                    </p>
+                    <div class="card-actions">
+                        <a href="02-Busca-Binaria.pdf" target="_blank" class="btn btn-primary"
+                            style="background: #f59e0b;"><i data-lucide="file-text"></i> Abrir PDF</a>
+                    </div>
+                </div>
+
+                <!-- 04 - Bubble Sort -->
+                <div class="card">
+                    <span class="card-id">#03</span>
+                    <div class="card-icon" style="background: linear-gradient(135deg, #3b82f6, #2563eb);"><i
+                            data-lucide="arrow-up-down"></i></div>
+                    <h3>Bubble Sort</h3>
+                    <p>O algoritmo das "bolhas". Entenda como as trocas adjacentes movem os maiores valores ao topo.</p>
+                    <div class="card-actions">
+                        <a href="03-Bubble-Sort.pdf" target="_blank" class="btn btn-primary"
+                            style="background: #3b82f6;"><i data-lucide="file-text"></i> Abrir PDF</a>
+                    </div>
+                </div>
+
+                <!-- 05 - Selection Sort -->
+                <div class="card">
+                    <span class="card-id">#04</span>
+                    <div class="card-icon" style="background: linear-gradient(135deg, #3b82f6, #2563eb);"><i
+                            data-lucide="check-square"></i></div>
+                    <h3>Selection Sort</h3>
+                    <p>Ordenação por seleção: minimizando trocas através da escolha constante do menor elemento.</p>
+                    <div class="card-actions">
+                        <a href="04-Selection-Sort.pdf" target="_blank" class="btn btn-primary"
+                            style="background: #3b82f6;"><i data-lucide="file-text"></i> Abrir PDF</a>
+                    </div>
+                </div>
+
+                <!-- 06 - Recursividade -->
+                <div class="card">
+                    <span class="card-id">#05</span>
+                    <div class="card-icon" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);"><i
+                            data-lucide="layers"></i></div>
+                    <h3>Recursividade</h3>
+                    <p>Poderoso conceito de auto-chamada. Casos base, pilhas de execução e solução de subproblemas.</p>
+                    <div class="card-actions">
+                        <a href="05-Recursividade.pdf" target="_blank" class="btn btn-primary"
+                            style="background: #8b5cf6;"><i data-lucide="file-text"></i> Abrir PDF</a>
+                    </div>
+                </div>
+
+                <!-- 07 - Merge Sort -->
+                <div class="card">
+                    <span class="card-id">#06</span>
+                    <div class="card-icon" style="background: linear-gradient(135deg, #3b82f6, #2563eb);"><i
+                            data-lucide="merge"></i></div>
+                    <h3>Merge Sort</h3>
+                    <p>Divisão recursiva e intercalação ordenada. Estabilidade e alta performance para grandes massas.
+                    </p>
+                    <div class="card-actions">
+                        <a href="06-Merge-Sort.pdf" target="_blank" class="btn btn-primary"
+                            style="background: #3b82f6;"><i data-lucide="file-text"></i> Abrir PDF</a>
+                    </div>
+                </div>
+
+                <!-- 08 - Quick Sort -->
+                <div class="card">
+                    <span class="card-id">#07</span>
+                    <div class="card-icon" style="background: linear-gradient(135deg, #3b82f6, #2563eb);"><i
+                            data-lucide="zap"></i></div>
+                    <h3>Quick Sort</h3>
+                    <p>O pivô da ordenação. Como a partição rápida domina a maioria dos cenários reais de programação.
+                    </p>
+                    <div class="card-actions">
+                        <a href="07-Quick-Sort.pdf" target="_blank" class="btn btn-primary"
+                            style="background: #3b82f6;"><i data-lucide="file-text"></i> Abrir PDF</a>
+                    </div>
+                </div>
+
+                <!-- 09 - Pilha -->
+                <div class="card">
+                    <span class="card-id">#08</span>
+                    <div class="card-icon" style="background: linear-gradient(135deg, #10b981, #059669);"><i
+                            data-lucide="database"></i></div>
+                    <h3>Pilha (Stack)</h3>
+                    <p>LIFO: Last-In, First-Out. Essencial para históricos, editores de texto e gestão de chamadas.</p>
+                    <div class="card-actions">
+                        <a href="08-Pilha.pdf" target="_blank" class="btn btn-primary" style="background: #10b981;"><i
+                                data-lucide="file-text"></i> Abrir PDF</a>
+                    </div>
+                </div>
+
+                <!-- 10 - Fila -->
+                <div class="card">
+                    <span class="card-id">#09</span>
+                    <div class="card-icon" style="background: linear-gradient(135deg, #10b981, #059669);"><i
+                            data-lucide="align-justify"></i></div>
+                    <h3>Fila (Queue)</h3>
+                    <p>FIFO: First-In, First-Out. Gestão de processos, pacotes de rede e sistemas de atendimento.</p>
+                    <div class="card-actions">
+                        <a href="09-Fila.pdf" target="_blank" class="btn btn-primary" style="background: #10b981;"><i
+                                data-lucide="file-text"></i> Abrir PDF</a>
+                    </div>
+                </div>
+
+                <!-- 11 - Deque -->
+                <div class="card">
+                    <span class="card-id">#10</span>
+                    <div class="card-icon" style="background: linear-gradient(135deg, #10b981, #059669);"><i
+                            data-lucide="move-horizontal"></i></div>
+                    <h3>Deque</h3>
+                    <p>Fila de duas pontas. Flexibilidade total para inserção e remoção em qualquer extremidade.</p>
+                    <div class="card-actions">
+                        <a href="10-Deque.pdf" target="_blank" class="btn btn-primary" style="background: #10b981;"><i
+                                data-lucide="file-text"></i> Abrir PDF</a>
+                    </div>
+                </div>
+
+                <!-- 12 - Lista Encadeada -->
+                <div class="card">
+                    <span class="card-id">#11</span>
+                    <div class="card-icon" style="background: linear-gradient(135deg, #10b981, #059669);"><i
+                            data-lucide="link"></i></div>
+                    <h3>Lista Encadeada</h3>
+                    <p>Dinamicidade na memória. Como os nodos se conectam através de referências e ponteiros.</p>
+                    <div class="card-actions">
+                        <a href="11-Lista-Encadeada.pdf" target="_blank" class="btn btn-primary"
+                            style="background: #10b981;"><i data-lucide="file-text"></i> Abrir PDF</a>
+                    </div>
+                </div>
+
+                <!-- 12.1 - Lista Duplamente Encadeada -->
+                <div class="card">
+                    <span class="card-id">#12</span>
+                    <div class="card-icon" style="background: linear-gradient(135deg, #10b981, #059669);"><i
+                            data-lucide="split"></i></div>
+                    <h3>Lista Dupla</h3>
+                    <p>Navegação bidirecional. Cada nodo conhece o seu sucessor e o seu antecessor.</p>
+                    <div class="card-actions">
+                        <a href="12-Lista-Duplamente-Encadeada.pdf" target="_blank" class="btn btn-primary"
+                            style="background: #10b981;"><i data-lucide="file-text"></i> Abrir PDF</a>
+                    </div>
+                </div>
+
+                <!-- 13 - Árvore Binária -->
+                <div class="card">
+                    <span class="card-id">#13</span>
+                    <div class="card-icon" style="background: linear-gradient(135deg, #ef4444, #dc2626);"><i
+                            data-lucide="git-branch"></i></div>
+                    <h3>Árvore Binária</h3>
+                    <p>Hierarquia e buscas relâmpago. Como organizar dados de forma que a busca seja sempre otimizada.
+                    </p>
+                    <div class="card-actions">
+                        <a href="13-Árvore-Binária-de-Busca.pdf" target="_blank" class="btn btn-primary"
+                            style="background: #ef4444;"><i data-lucide="file-text"></i> Abrir PDF</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Bibliografia -->
+        <section id="bibliografia" class="bib-section animate-fade-in">
+            <h3 style="margin-bottom: 2rem; color: var(--primary-dark); font-size: 1.8rem;">Referências Bibliográficas
+            </h3>
+            <ul class="bib-list">
+                <li class="bib-item">
+                    <i data-lucide="book" style="width:20px;"></i>
+                    <span><strong>ASCENCIO, Ana Fernanda Gomes</strong>; ARAÚJO, Graziela Santos de. <em>Estruturas de
+                            dados: algoritmos, análise da complexidade e implementações em Java e C/C++</em>. São Paulo:
+                        Pearson Prentice Hall.</span>
+                </li>
+                <li class="bib-item">
+                    <i data-lucide="book" style="width:20px;"></i>
+                    <span><strong>GOODRICH, Michael T.</strong>; TAMASSIA, Roberto. <em>Estruturas de Dados e Algoritmos
+                            em Java</em>. Porto Alegre: Bookman.</span>
+                </li>
+                <li class="bib-item">
+                    <i data-lucide="book" style="width:20px;"></i>
+                    <span><strong>DEITEL, Harvey M.</strong>; DEITEL, Paul J. <em>Java: como programar</em>. São Paulo:
+                        Pearson.</span>
+                </li>
+                <li class="bib-item">
+                    <i data-lucide="book" style="width:20px;"></i>
+                    <span><strong>CORMEN, Thomas H.</strong> et al. <em>Algoritmos: teoria e prática</em>. Rio de
+                        Janeiro: Elsevier.</span>
+                </li>
+                <li class="bib-item">
+                    <i data-lucide="book" style="width:20px;"></i>
+                    <span><strong>TENENBAUM, Aaron M.</strong> et al. <em>Estruturas de dados usando C</em>. São Paulo:
+                        Makron Books.</span>
+                </li>
+            </ul>
+        </section>
     </main>
 
     <footer>
-        <div class="footer-logo">ED | FATEC</div>
-        <p>Desenvolvido para auxiliar no aprendizado de Estrutura de Dados em Java.</p>
+        <div class="footer-logo">ED | <span>FATEC</span></div>
+        <p>Apostila Digital Interativa para a disciplina de Estrutura de Dados - 2026/1.</p>
         <div class="footer-links">
-            <a href="#">Início</a>
-            <a href="#cards">PDFs</a>
-            <a href="APOSTILA_ESTRUTURA_DADOS_JAVA.md">Versão Markdown</a>
+            <a href="#">Topo</a>
+            <a href="https://github.com/XandyGomes" target="_blank">GitHub do Prof.</a>
+            <a href="#" onclick="window.print()">Versão PDF</a>
         </div>
-        <p class="copy">© 2026 - Prof. Me. Alexandre Gomes. Todos os direitos reservados.</p>
-        <button onclick="window.print()" class="btn btn-secondary"
-            style="color: white; border-color: white; margin-top: 2rem;">
-            <i data-lucide="printer"></i> Salvar Apostila em PDF
-        </button>
+        <p class="copy">© 2026 - Fatec Franca. Organizado por Prof. Me. Alexandre Gomes.</p>
     </footer>
 
     <script>
@@ -1032,7 +1244,7 @@
         document.querySelectorAll('.animate-fade-in').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
-            el.style.transition = 'all 0.8s ease-out';
+            el.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
             observer.observe(el);
         });
     </script>
