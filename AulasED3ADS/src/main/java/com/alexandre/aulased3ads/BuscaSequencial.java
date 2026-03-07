@@ -10,7 +10,15 @@ package com.alexandre.aulased3ads;
  */
 public class BuscaSequencial {
     
-    public static int buscaSequencial(String[] vetor, String valorBusca){
+    public static int buscaSequencialS(String[] vetor, String valorBusca){
+       for (int i = 0; i < vetor.length; i++){
+           if(vetor[i].equals(valorBusca)){
+               return i;
+           }
+       }
+       return -1;
+    }
+    public static int buscaSequencialI(Integer[] vetor, Integer valorBusca){
        for (int i = 0; i < vetor.length; i++){
            if(vetor[i].equals(valorBusca)){
                return i;
@@ -21,9 +29,13 @@ public class BuscaSequencial {
     
     public static void main(String[] args) {
         //vetor de frutas
-        String[] frutas = {"laranja", "maça", "pera", "uva", "jabuticaba", "limão", "mamão"};   
-        System.out.println("Posição de uva: " + buscaSequencial(frutas, "uva"));
-        System.out.println("Posição de maça: " + buscaSequencial(frutas, "maça"));
-        System.out.println("Posição de melão: " + buscaSequencial(frutas, "melão"));
+        String[] frutas = {"laranja", "maça", "pera", "uva", "jabuticaba", "limão", "mamão"};
+        Integer[] numeros = {5, 7, 9, 8, 1, 3, 44, 66, 12};
+        
+        System.out.println("Posição de uva: " + buscaSequencialS(frutas, "uva"));
+        System.out.println("Posição de maça: " + buscaSequencialS(frutas, "maça"));
+        System.out.println("Posição de melão: " + buscaSequencialS(frutas, "melão"));
+        
+        System.out.println("Posição do numero 1: " + buscaSequencialI(numeros, 1));
     }
 }
