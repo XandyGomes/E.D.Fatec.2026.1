@@ -4,7 +4,11 @@
  */
 package com.alexandre.aulased3ads;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  *
@@ -27,7 +31,7 @@ public class BubbleSort {
         }while(trocou);
     }
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Integer[] nums = {77,44,22,33,77,99,55,88,0,66,11};
         String[] nomesDesord = {"MARIA", "JOAO", "ANA", "CARLOS", "BEATRIZ"};
         
@@ -36,6 +40,18 @@ public class BubbleSort {
         
         bubbleSort(nomesDesord);
         System.out.println(Arrays.toString(nomesDesord));
+        
+        Path caminho = Path.of("data/nomes-desord.txt");
+        
+        List<String> lista = Files.readAllLines(caminho);
+        
+        String[] nomes = lista.toArray(new String[0]);
+        
+        bubbleSort(nomes);
+        
+        for(String nome : nomes){
+            System.out.println(nome);
+        }
 
     }
 }
