@@ -47,11 +47,14 @@ public class BubbleSort {
         
         String[] nomes = lista.toArray(new String[0]);
         
+        long inicio = System.currentTimeMillis();
         bubbleSort(nomes);
+        long fim = System.currentTimeMillis();
+        
+        System.out.println("Tempo de ordenação BubbleSort de nomes-desord.txt: "+ (fim-inicio) + "ms");
         
         for(String nome : nomes){
             System.out.println(nome);
         }
-
     }
 }
