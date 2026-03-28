@@ -4,7 +4,6 @@
  */
 package com.alexandre.aulased3ads;
 
-import static com.alexandre.aulased3ads.SelectionSort.selectionSort;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
