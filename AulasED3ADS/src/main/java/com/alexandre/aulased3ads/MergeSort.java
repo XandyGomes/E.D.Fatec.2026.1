@@ -15,41 +15,54 @@ import java.util.List;
  * @author Alexandre
  */
 public class MergeSort {
-    public static <MS extends Comparable<MS>>void mergeSort(MS[] vetor) {
-        //caso base: se o vetor tem 0 ou 1 elemento, ja está "ordenado".
-        if(vetor.length < 2) {
+
+    public static <MS extends Comparable<MS>> void mergeSort(MS[] vetor) {
+        // caso base: se o vetor tem 0 ou 1 elemento, ja está "ordenado".
+        if (vetor.length < 2) {
             return;
         }
-        
+
         int meio = vetor.length / 2;
-        
+
         MS[] vetEsq = Arrays.copyOfRange(vetor, 0, meio);
         MS[] vetDir = Arrays.copyOfRange(vetor, meio, vetor.length);
-        
-        //chamadas recursivas
+
+        // chamadas recursivas
         mergeSort(vetEsq);
         mergeSort(vetDir);
-        
-        //mesclagem (Merge)
-        
+
+        // mesclagem (Merge)
         int posEsq = 0, posDir = 0, posRes = 0;
-        
-        while(posEsq < vetEsq.length && posDir < vetDir.length){
-            if(vetEsq[posEsq].compareTo(vetDir[posDir]) < 0){
+
+        while (posEsq < vetEsq.length && posDir < vetDir.length) {
+            if (vetEsq[posEsq].compareTo(vetDir[posDir]) < 0) {
                 vetor[posRes] = vetEsq[posEsq];
                 posEsq++;
-            }else{
+            } else {
                 vetor[posRes] = vetDir[posDir];
                 posDir++;
             }
             posRes++;
         }
-    }
-    
-    public static void main(String[] args) throws IOException {
-        Integer[] nums = {77, 44, 22, 33, 99, 55, 88, 0, 66, 11};
+        // Se sobrou algo no vetor da ESQUERDA, copia para o final
+        while (posEsq < vetEsq.length) {
+            vetor[posRes] = vetEsq[posEsq];
+            posEsq++;
+            posRes++;
+        }
 
-        String[] nomesDesordenados = {"Maria", "João", "Ana", "Carlos", "Beatriz"};
+        // Se sobrou algo no vetor da DIREITA, copia para o final
+        while (posDir < vetDir.length) {
+            vetor[posRes] = vetDir[posDir];
+            posDir++;
+            posRes++;
+        }
+    }
+
+    public static void main(String[] args) throws IOException {
+        Integer[] nums = { 77, 44, 22, 33, 99, 55, 88, 0, 66, 11 };
+
+        String[] nomesDesordenados = { "Maria", "João", "Ana", "Carlos", "Beatriz" };
 
         mergeSort(nums);
         System.out.println(Arrays.toString(nums));
