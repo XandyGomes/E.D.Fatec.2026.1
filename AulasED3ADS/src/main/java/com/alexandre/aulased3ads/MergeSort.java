@@ -60,9 +60,9 @@ public class MergeSort {
     }
 
     public static void main(String[] args) throws IOException {
-        Integer[] nums = { 77, 44, 22, 33, 99, 55, 88, 0, 66, 11 };
+        Integer[] nums = {77, 44, 22, 33, 99, 55, 88, 0, 66, 11};
 
-        String[] nomesDesordenados = { "Maria", "João", "Ana", "Carlos", "Beatriz" };
+        String[] nomesDesordenados = {"Maria", "João", "Ana", "Carlos", "Beatriz"};
 
         mergeSort(nums);
         System.out.println(Arrays.toString(nums));
